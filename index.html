@@ -4,9 +4,73 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Yannic Neumann</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script> 
+      $(function(){
+          $("#headerDiv").load("header.html");
+          $("#footerDiv").load("footer.html");
+      });  
+  </script>
   </head>
   <body>
-    <h1>test</h1>
+    <header id="headerDiv"></header>
+    <h1>Hallo, ich bin Yannic Neumann</h1>
+
+    <h2>Unternehmungen</h2>
+
+    <section id="mainRow" class="flexThreeCol">
+
+      <article>
+        <img src="stock-ux.jpg" alt="Header Bild UX">
+        <h3>Independant UX Designer</h3>
+        <a href="#" class="btnPrimary">Mehr erfahren</a>
+      </article>
+
+      <article>
+        <img src="stock-sos.jpg" alt="Header Bild Self-Ordering System">
+        <h3>Selfgast SOS</h3>
+        <a href="#" class="btnPrimary">Mehr erfahren</a>
+      </article>
+
+      <article>
+        <img src="stock-type.jpg" alt="Header Bild Type Design">
+        <h3>Type Design</h3>
+        <a href="#" class="btnPrimary">Mehr erfahren</a>
+      </article>
+    
+    </section>
+
+    <section id="secondRow" class="gridAutofit">
+
+      <article>
+        <h3>Sonstige Unternehmungen</h3>
+      </article>
+
+      <article>
+        <h3>Über mich</h3>
+      </article>
+
+      <article>
+        <h3>Portfolio</h3>
+      </article>
+
+      <article>
+        <h3>Skills & Abschlüsse</h3>
+        <ul>
+          <li>Lorem ipsum dolor</li>
+          <li>Lorem ipsum dolor</li>
+          <li>Lorem ipsum dolor</li>
+          <li>Lorem ipsum dolor</li>
+          <li>Lorem ipsum dolor</li>
+          <li>Lorem ipsum dolor</li>
+        </ul>
+      </article>
+
+    </section>
+
+
+    <footer id="footerDiv"></footer>
   </body>
 </html>
