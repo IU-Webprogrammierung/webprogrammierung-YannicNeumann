@@ -18,14 +18,89 @@
 
 body {
   margin: 0;
-  max-width: 100vw;
+  max-width: 1400px;
+  margin: auto;
+  background-color: #fff;
+  color: rgb(36, 36, 36);
+}
+body h3, body h2, body .formattingH1 {
+  color: rgb(36, 36, 36);
+}
+body img {
+  filter: brightness(1);
+}
+body footer svg {
+  filter: invert(0);
+}
+body .accordionBTN {
+  background-color: #000;
 }
 
+body.dark-mode {
+  background-color: #000;
+  color: rgb(185, 185, 185);
+  font-weight: lighter;
+}
+body.dark-mode h3, body.dark-mode h2, body.dark-mode .formattingH1 {
+  color: rgb(185, 185, 185);
+}
+body.dark-mode img {
+  filter: brightness(0.7);
+}
+body.dark-mode footer svg {
+  filter: invert(0.7);
+}
+body.dark-mode .accordionBTN {
+  background-color: rgb(40, 40, 40);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    background-color: #000;
+    color: rgb(185, 185, 185);
+  }
+  body h3, body h2, body .formattingH1 {
+    color: rgb(185, 185, 185);
+    font-stretch: 20%;
+  }
+  body img {
+    filter: brightness(0.7);
+  }
+  body footer svg {
+    filter: invert(0.7);
+  }
+  body .accordionBTN {
+    background-color: rgb(40, 40, 40);
+  }
+  body.light-mode {
+    background-color: #fff;
+    color: rgb(36, 36, 36);
+  }
+  body.light-mode h3, body.light-mode h2 {
+    color: #fff;
+  }
+  body.light-mode .formattingH1, body.light-mode .formattingH2, body.light-mode .formattingH3 {
+    color: rgb(36, 36, 36);
+  }
+  body.light-mode img {
+    filter: brightness(1);
+  }
+  body.light-mode footer svg {
+    filter: invert(0);
+  }
+  body.light-mode .accordionBTN {
+    background-color: #000;
+  }
+}
 section {
   margin-bottom: 40px;
 }
+section img {
+  max-width: 100%;
+}
 
-h1 {
+h1, .formattingH1 {
   font-weight: 700;
   font-size: 35px;
 }
@@ -49,7 +124,6 @@ h1, h2, h3 {
 p, ul, ol {
   font-size: 18px;
   font-weight: 400;
-  font-variation-settings: "opsz" 5;
   line-height: 150%;
 }
 
@@ -61,9 +135,37 @@ p, ul, ol {
 .btnPrimary {
   font-size: 18px;
   color: #c6538c;
-  font-weight: 100;
+  font-weight: 400;
   font-stretch: 100%;
   padding: 10px;
+}
+
+.accordion {
+  height: 58.75px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.accordion .accordionBTN {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 15px 15px;
+}
+.accordion .accordionBTN .flexTwoCol {
+  background-color: #c6538c;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.accordion .accordionBTN h2 {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+.accordion .accordionBTN svg rect {
+  fill: white;
+}
+.accordion p {
+  padding: 0 15px;
 }
 
 header {
@@ -105,6 +207,12 @@ header #darkmodeContainer {
   position: relative;
 }
 
+.flexTwoCol {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
 .flexThreeCol {
   display: flex;
   justify-content: space-between;
@@ -114,18 +222,19 @@ header #darkmodeContainer {
 
 .gridAutofit {
   display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
 }
 
 #mainRow {
-  width: 100vw;
+  width: 100%;
 }
 #mainRow article {
   max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 #mainRow article div {
   position: relative;
@@ -136,7 +245,6 @@ header #darkmodeContainer {
   bottom: -16px;
   width: 100vw;
   text-align: center;
-  color: white;
   background: black;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -178,7 +286,6 @@ header #darkmodeContainer {
 }
 #secondRow a h3 {
   margin: 0;
-  color: white;
   background: black;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -202,6 +309,21 @@ footer section #socialIcons {
   margin-bottom: 20px;
 }
 
+#aboutMe .formattingH1, #aboutMe .formattingH1 span {
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 0 5vw;
+  }
+  .flexThreeCol {
+    flex-direction: row;
+  }
+  #mainRow article div img {
+    height: 200px;
+  }
+}
 .switch {
   position: relative;
   display: inline-block;

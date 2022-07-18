@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yannic Neumann</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script> 
+      $(function(){
+          $("#headerDiv").load("header.html");
+          $("#footerDiv").load("footer.html");
+      });  
+  </script>
+  </head>
+  <body class="" id="aboutMe">
+    <header id="headerDiv"></header>
+
+  <section id="hero">
+    <img src="src/200213_Yannic_N_19.JPG" alt="Bild von Yannic">
+    <div>
+      <h2 class="formattingH1">
+        UX Designer,
+        Type Designer,
+        Unternehmer
+      </h2>
+    </div>
+  </section>
+
+  <section>
+    <article class="accordion">
+      <div class="accordionBTN flexTwoCol">
+        <h2>Lebenslauf</h2>
+        <div class="flexTwoCol">
+          <span>mehr</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="plus" width="20" height="20" viewBox="0 0 160 160">
+          <rect class="vertical-line" x="70" width="20" height="160"/>
+          <rect class="horizontal-line" y="70" width="160" height="20"/>
+        </svg>
+      </div>
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente in blanditiis fugiat amet excepturi deleniti explicabo quidem sunt odio officia non, nobis debitis eos repellendus, commodi ipsum at sit minima!</p>
+    </article>
+
+    <article class="accordion">
+      <div class="accordionBTN flexTwoCol">
+        <h2>Persönliches</h2>
+        <div class="flexTwoCol">
+          <span>mehr</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="plus" width="20" height="20" viewBox="0 0 160 160">
+          <rect class="vertical-line" x="70" width="20" height="160"/>
+          <rect class="horizontal-line" y="70" width="160" height="20"/>
+        </svg>
+      </div>
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente in blanditiis fugiat amet excepturi deleniti explicabo quidem sunt odio officia non, nobis debitis eos repellendus, commodi ipsum at sit minima!</p>
+    </article>
+
+    <article class="accordion">
+      <div class="accordionBTN flexTwoCol">
+        <h2>»Du« oder »Sie«?</h2>
+        <div class="flexTwoCol">
+          <span>mehr</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="plus" width="20" height="20" viewBox="0 0 160 160">
+          <rect class="vertical-line" x="70" width="20" height="160"/>
+          <rect class="horizontal-line" y="70" width="160" height="20"/>
+        </svg>
+      </div>
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente in blanditiis fugiat amet excepturi deleniti explicabo quidem sunt odio officia non, nobis debitis eos repellendus, commodi ipsum at sit minima!</p>
+    </article>
+
+    <article class="accordion">
+      <div class="accordionBTN flexTwoCol">
+        <h2>Werte und Prinzipien</h2>
+        <div class="flexTwoCol">
+          <span>mehr</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="plus" width="20" height="20" viewBox="0 0 160 160">
+          <rect class="vertical-line" x="70" width="20" height="160"/>
+          <rect class="horizontal-line" y="70" width="160" height="20"/>
+        </svg>
+      </div>
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente in blanditiis fugiat amet excepturi deleniti explicabo quidem sunt odio officia non, nobis debitis eos repellendus, commodi ipsum at sit minima!</p>
+    </article>
+
+  </section>
+
+
+    <footer id="footerDiv"></footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+    <script>
+      let allAccordions = document.querySelectorAll('.accordion')
+
+      allAccordions.forEach(accordion =>
+      accordion.addEventListener('click', function() {
+        let thisPlus = accordion.querySelector('.vertical-line');
+        let thisText = accordion.querySelector('.flexTwoCol span')
+        
+        if(accordion.classList.contains('offen')) {
+          gsap.globalTimeline.getChildren().forEach(t => t.kill());
+          let closeAccordionTL = gsap.timeline();
+          closeAccordionTL.to(accordion, {duration: .25, height: '58.75px', overflow: 'hidden', ease: Power4.easeOut})
+                      .to(thisPlus, {duration: .5, scaleY: '1',  transformOrigin: '50% 50%'}, '-=.25');
+          
+        thisText.innerText = 'mehr'
+        } else {
+          let openAccordionTL = gsap.timeline();
+          openAccordionTL.to(accordion, {duration: 2, height: 'auto', overflow: 'none', ease: Elastic.easeOut.config(1.2, 0.3)})
+                      .to(thisPlus, {duration: .5, scaleY: '0',  transformOrigin: '50% 50%'}, '-=2')
+
+          thisText.innerText = 'minimieren'
+        }
+
+        accordion.classList.toggle('offen')
+      })
+      )
+    </script>
+  </body>
+</html>
