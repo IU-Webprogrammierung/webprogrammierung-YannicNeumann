@@ -403,4 +403,53 @@ input:focus + .slider {
 
 input:checked + .slider:before {
   transform: translateX(26px);
+}
+
+#nav {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+#nav #burger {
+  position: relative;
+  background-color: rgb(40, 40, 40);
+  padding: 20px 30px 50px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+#nav #burger span {
+  width: 30px;
+  height: 2px;
+  border-radius: 10px;
+  background-color: white;
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#nav #burger #second {
+  margin-top: 10px;
+}
+#nav article {
+  position: absolute;
+  transform: translateY(100%);
+  width: 100vw;
+}
+#nav article ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+#nav article ul li {
+  padding: 15px;
+  background-color: rgb(40, 40, 40);
+}
+#nav article ul li:nth-of-type(even) {
+  background-color: #353535;
+}
+#nav article ul li a {
+  color: #fff;
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */
