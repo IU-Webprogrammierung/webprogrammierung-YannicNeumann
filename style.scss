@@ -106,7 +106,7 @@ body {
         color: $lighmodeType;
 
         h3,h2 {
-            color: #fff;
+            color: $lighmodeType;
         }
         .formattingH1, .formattingH2, .formattingH3 {
             color: $lighmodeType;
@@ -125,7 +125,7 @@ body {
     }
   }
 section {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     img {
         max-width: 100%;
     }
@@ -154,6 +154,9 @@ p, ul, ol {
     font-weight: 400;
     line-height: 150%;
 }
+p {
+    padding: 0 15px;
+}
 .fontWeightLight {
     font-weight: 400;
     font-size: 35px;
@@ -171,7 +174,6 @@ p, ul, ol {
     margin-bottom: 20px;
     .accordionBTN {
         width: 100%;
-        background-color: #000;
         color: #fff;
         padding: 15px 15px;
         
@@ -358,9 +360,28 @@ footer {
     }
 }
 
+#weitereUnternehmungen {
+    section {
+        article.gridAutofit {
+
+            div {
+                height: 150px;
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            
+        }
+    }
+}
+
 @media (min-width:768px) {
     section {
         padding: 0 5vw;
+        margin-bottom: 90px;
     }
     .flexThreeCol {
         flex-direction: row;
@@ -370,6 +391,13 @@ footer {
             height: 200px;
         }
     }
+    #weitereUnternehmungen {
+        p {
+            max-width: 700px;
+            margin: auto;
+        }
+    }
+
 }
 
 

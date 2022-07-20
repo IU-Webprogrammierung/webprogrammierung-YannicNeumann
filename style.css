@@ -78,7 +78,7 @@ body.dark-mode .accordionBTN {
     color: rgb(36, 36, 36);
   }
   body.light-mode h3, body.light-mode h2 {
-    color: #fff;
+    color: rgb(36, 36, 36);
   }
   body.light-mode .formattingH1, body.light-mode .formattingH2, body.light-mode .formattingH3 {
     color: rgb(36, 36, 36);
@@ -94,7 +94,7 @@ body.dark-mode .accordionBTN {
   }
 }
 section {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 section img {
   max-width: 100%;
@@ -127,6 +127,10 @@ p, ul, ol {
   line-height: 150%;
 }
 
+p {
+  padding: 0 15px;
+}
+
 .fontWeightLight {
   font-weight: 400;
   font-size: 35px;
@@ -147,7 +151,6 @@ p, ul, ol {
 }
 .accordion .accordionBTN {
   width: 100%;
-  background-color: #000;
   color: #fff;
   padding: 15px 15px;
 }
@@ -313,15 +316,30 @@ footer section #socialIcons {
   text-align: left;
 }
 
+#weitereUnternehmungen section article.gridAutofit div {
+  height: 150px;
+}
+#weitereUnternehmungen section article.gridAutofit div img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
 @media (min-width: 768px) {
   section {
     padding: 0 5vw;
+    margin-bottom: 90px;
   }
   .flexThreeCol {
     flex-direction: row;
   }
   #mainRow article div img {
     height: 200px;
+  }
+  #weitereUnternehmungen p {
+    max-width: 700px;
+    margin: auto;
   }
 }
 .switch {
