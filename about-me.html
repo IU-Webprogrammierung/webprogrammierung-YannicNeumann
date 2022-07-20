@@ -20,11 +20,11 @@
   <section id="hero">
     <img src="src/200213_Yannic_N_19.JPG" alt="Bild von Yannic">
     <div>
-      <h2 class="formattingH1">
+      <h1 class="formattingH1">
         UX Designer,
         Type Designer,
         Unternehmer
-      </h2>
+      </h1>
     </div>
   </section>
 
@@ -87,6 +87,8 @@
 
   </section>
 
+  <section class="desktopContent"></section>
+
 
     <footer id="footerDiv"></footer>
 
@@ -95,6 +97,8 @@
 
     <script>
       let allAccordions = document.querySelectorAll('.accordion')
+      let ArrayH2 = []
+      let ArrayP = []
 
       allAccordions.forEach(accordion =>
       accordion.addEventListener('click', function() {
@@ -119,6 +123,33 @@
         accordion.classList.toggle('offen')
       })
       )
+
+    </script>
+    <script>
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  if(window.matchMedia("(min-width: 768px)").matches) {
+        allAccordions.forEach(function(accordion) {
+
+        ArrayH2.push(accordion.querySelector('h2'));
+        ArrayP.push(accordion.querySelector('p'))
+
+        let newSection = document.createElement("section")
+        newSection.appendChild(accordion.querySelector('h2'))
+        newSection.appendChild(accordion.querySelector('p'))
+        document.querySelector('.desktopContent').appendChild(newSection)
+        accordion.style.display = 'none'
+      })
+
+      console.log(ArrayH2);
+        console.log(ArrayP);
+      }
+
+})
+
+
     </script>
   </body>
 </html>
