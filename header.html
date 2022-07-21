@@ -21,6 +21,7 @@
 const btn = document.querySelector(".btn-toggle");
 // Check for dark mode preference at the OS level
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+console.log(prefersDarkScheme)
 
 // Get the user's theme preference from local storage, if it's available
 const currentTheme = localStorage.getItem("theme");
@@ -51,8 +52,14 @@ btn.addEventListener("click", function() {
   localStorage.setItem("theme", theme);
 });
 
-if(document.querySelector('body').classList.contains('dark-mode')) {
-    document.querySelector('.switch input').checked = true
+let bodyElement = document.querySelector('body')
+let switchElement = document.querySelector('.switch input')
+if(bodyElement.classList.contains('dark-mode')) {
+  switchElement.checked = true
+  } else if(document.querySelector('body').classList.contains('light-mode')) {
+    switchElement.checked = false
+  } else if(prefersDarkScheme.matches || !bodyElement.classList.contains('light-mode') || !bodyElement.classList.contains('dark-mode')) {
+    switchElement.checked = true
   }
 </script>
 
