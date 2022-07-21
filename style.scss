@@ -486,6 +486,8 @@ footer {
         padding: 20px 30px 50px;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
+        z-index: 990;
+        box-shadow: 0 -10px 15px rgba($color: #000000, $alpha: .2);
         span {
             width: 30px;
             height: 2px;
@@ -505,10 +507,20 @@ footer {
         transform: translateY(100%);
         width: 100vw;
 
+        &::after {
+            width: 100vw;
+            height: 200px;
+            position: absolute;
+            content: ' ';
+            background: linear-gradient(180deg, $darkmodeBackgroundCasual,rgb(5, 5, 5));
+            z-index: -1;
+        }
+
         ul {
             list-style: none;
             padding: 0;
             text-align: center;
+            margin: 0;
             li {
                 padding: 15px;
                 background-color: $darkmodeBackgroundCasual;

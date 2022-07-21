@@ -418,6 +418,8 @@ input:checked + .slider:before {
   padding: 20px 30px 50px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  z-index: 990;
+  box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.2);
 }
 #nav #burger span {
   width: 30px;
@@ -437,10 +439,19 @@ input:checked + .slider:before {
   transform: translateY(100%);
   width: 100vw;
 }
+#nav article::after {
+  width: 100vw;
+  height: 200px;
+  position: absolute;
+  content: " ";
+  background: linear-gradient(180deg, rgb(40, 40, 40), rgb(5, 5, 5));
+  z-index: -1;
+}
 #nav article ul {
   list-style: none;
   padding: 0;
   text-align: center;
+  margin: 0;
 }
 #nav article ul li {
   padding: 15px;

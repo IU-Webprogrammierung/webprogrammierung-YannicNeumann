@@ -16,24 +16,45 @@
 
     <article>
         <ul>
-            <li><a href="#">link</a></li>
-            <li><a href="#">link</a></li>
-            <li><a href="#">link</a></li>
-            <li><a href="#">link</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">UX</a></li>
+            <li><a href="#">Selfgast SOS</a></li>
+            <li><a href="#">Type Design</a></li>
+            <li><a href="#">Weitere Unternehmungen</a></li>
+            <li><a href="#">Über mich</a></li>
+            <li><a href="#">Portfolio</a></li>
         </ul>
     </article>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 <script>
     let burgerContainer = document.querySelector('#burgerContainer')
+    let navContainer = document.querySelector('#nav')
+
+    window.addEventListener('load', function() {
+        let tlIN = gsap.timeline();
+        tlIN.from('#nav', { duration: '.5', y:'100%', ease: Power3.easeOut}, '+=2')
+    })
+
+
 
     burgerContainer.addEventListener('click', function() {
 
         if(!burgerContainer.classList.contains('ausgefahren')) {
-        gsap.to('#nav article', {duration: '.5', y: '-100%'})
+            let tlOpen = gsap.timeline();
+
+            tlOpen.to('#nav article', {duration: '1.25', y: '-100%', ease: Elastic.easeOut.config(1, 0.5)})
+            .to('#first', {duration: '.4', rotate: '45deg', x: '4px', transformOrigin: 'left',ease: Sine.easeInOut}, '-=1.25')
+            .to('#second', {duration: '.4', rotate: '-45deg', y: '11px', x: '4px', transformOrigin: 'left',ease: Sine.easeInOut}, '-=1.25')
+            .to('#burger', {duration:'.4', boxShadow: '0 -10px 15px rgba(0,0,0,.4)'}, '-=1.25')
         } else {
-            gsap.to('#nav article', {duration: '.5', y: '100%'})
+            let tlClose = gsap.timeline();
+
+            tlClose.to('#nav article', {duration: '.5', y: '100%', ease: Power4.easeInOut,})
+            .to('#first', {duration: '.5', rotate: '0', x: '0', transformOrigin: 'none',ease: Circ.easeInOut}, '-=.5')
+            .to('#second', {duration: '.5', rotate: '0', y: '0', x: '0', transformOrigin: 'none',ease: Circ.easeInOut}, '-=.5')
+            .to('#burger', {duration:'.4', boxShadow: '0 -10px 15px rgba(0,0,0,.2)'}, '-=.5')
         }
         burgerContainer.classList.toggle('ausgefahren')
     })
