@@ -350,7 +350,7 @@ footer section #socialIcons {
   #aboutMe .formattingH1, #aboutMe .formattingH1 span {
     text-align: center;
   }
-  #weitereUnternehmungen p, #typeDesign p {
+  #weitereUnternehmungen p, #typeDesign p, #portfolio p {
     max-width: 700px;
     margin: auto;
   }
