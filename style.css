@@ -463,4 +463,30 @@ input:checked + .slider:before {
 #nav article ul li a {
   color: #fff;
   text-decoration: none;
+}
+
+#nav.desktopNav {
+  top: 20px;
+  left: 5vw;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  z-index: 9990;
+}
+#nav.desktopNav #burger {
+  background: none;
+  box-shadow: none;
+}
+#nav.desktopNav article {
+  transform: translate(-105%, 5vh);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#nav.desktopNav article::after {
+  position: static;
+}
+#nav.desktopNav article ul li {
+  padding: 15px 50px;
+  white-space: nowrap;
 }/*# sourceMappingURL=style.css.map */

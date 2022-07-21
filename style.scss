@@ -538,6 +538,31 @@ footer {
     }
   }
 
+  #nav.desktopNav {
+    top: 20px;
+    left: 5vw;
+    width: fit-content;
+    z-index: 9990;
+
+    #burger {
+        background: none;
+        box-shadow: none;
+    }
+
+    article {
+        transform: translate(-105%, 5vh);
+        width: fit-content;
+
+        &::after {
+            position: static;
+        }
+        ul li {
+            padding: 15px 50px;
+            white-space: nowrap;
+        }
+    }
+  }
+
 
 
   
