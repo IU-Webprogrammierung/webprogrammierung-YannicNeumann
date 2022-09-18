@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="burgerContainer">
+        <div id="burger">
+            <span class="stripe" id="first"></span>
+            <span class="stripe" id="second"></span>
+        </div>
+    </div>
+
+    <article>
+        <ul>
+            <li><a href="/en/index.html">Home</a></li>
+            <li><a target="_blank" href="https://www.yannic-neumann.de">UX</a></li>
+            <li><a target="_blank" href="https://selfgast.webflow.io">Selfgast SOS</a></li>
+            <li><a href="type-design.html">Type Design</a></li>
+            <li><a href="weitere-unternehmungen.html">Other Ventures</a></li>
+            <li><a href="about-me.html">About me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+    </article>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+<script>
+    let burgerContainer = document.querySelector('#burgerContainer')
+    let navContainer = document.querySelector('#nav')
+
+    window.addEventListener('load', function() {
+        if(window.matchMedia("(max-width: 1000px)").matches) {
+        let tlIN = gsap.timeline();
+        tlIN.from('#nav', { duration: '.5', y:'100%', ease: Power3.easeOut}, '+=2')
+        burgerContainer.addEventListener('click', mobileNavAnimation)
+        } else {
+            document.querySelector('#headerDiv').after(navContainer)
+            navContainer.classList.add('desktopNav')
+            burgerContainer.addEventListener('click', DesktopNavAnimation)
+        }
+    })
+
+
+
+
+
+
+    function mobileNavAnimation() {
+        if(!burgerContainer.classList.contains('ausgefahren')) {
+            let tlOpen = gsap.timeline();
+
+            tlOpen.to('#nav article', {duration: '1.25', y: '-100%', ease: Elastic.easeOut.config(1, 0.5)})
+            .to('#first', {duration: '.4', rotate: '45deg', x: '4px', transformOrigin: 'left',ease: Sine.easeInOut}, '-=1.25')
+            .to('#second', {duration: '.4', rotate: '-45deg', y: '11px', x: '4px', transformOrigin: 'left',ease: Sine.easeInOut}, '-=1.25')
+            .to('#burger', {duration:'.4', boxShadow: '0 -10px 15px rgba(0,0,0,.4)'}, '-=1.25')
+        } else {
+            let tlClose = gsap.timeline();
+
+            tlClose.to('#nav article', {duration: '.5', y: '100%', ease: Power4.easeInOut,})
+            .to('#first', {duration: '.5', rotate: '0', x: '0', transformOrigin: 'none',ease: Circ.easeInOut}, '-=.5')
+            .to('#second', {duration: '.5', rotate: '0', y: '0', x: '0', transformOrigin: 'none',ease: Circ.easeInOut}, '-=.5')
+            .to('#burger', {duration:'.4', boxShadow: '0 -10px 15px rgba(0,0,0,.2)'}, '-=.5')
+        }
+        burgerContainer.classList.toggle('ausgefahren')
+    }
+
+
+    function DesktopNavAnimation() {
+
+        if(!burgerContainer.classList.contains('ausgefahren')) {
+            let tlOpen = gsap.timeline();
+            let tlStagger = gsap.timeline();
+            
+
+            tlOpen.to('#nav article li', {duration: '1.25', x: '120%', stagger: {amount:0.5}, ease: Elastic.easeOut.config(1, 0.5)})
+            .to('#first', {duration: '.4', rotate: '45deg', x: '4px', transformOrigin: 'left',ease: Sine.easeInOut}, '-=1.75')
+            .to('#second', {duration: '.4', rotate: '-45deg', y: '11px', x: '4px', transformOrigin: 'left',ease: Sine.easeInOut}, '-=1.75')
+            .to('#burger', {duration:'.4', boxShadow: '0 -10px 15px rgba(0,0,0,.4)'}, '-=1.75')
+        } else {
+            let tlClose = gsap.timeline();
+
+            tlClose.to('#nav article li', {duration: '.5',stagger:{from: 'end',amount:.1}, x: '-100%', ease: Power4.easeInOut,})
+            .to('#first', {duration: '.5', rotate: '0', x: '0', transformOrigin: 'none',ease: Circ.easeInOut}, '-=.5')
+            .to('#second', {duration: '.5', rotate: '0', y: '0', x: '0', transformOrigin: 'none',ease: Circ.easeInOut}, '-=.5')
+            .to('#burger', {duration:'.4', boxShadow: '0 -10px 15px rgba(0,0,0,.2)'}, '-=.5')
+        }
+        burgerContainer.classList.toggle('ausgefahren')
+    }
+</script>
+</body>
+</html>

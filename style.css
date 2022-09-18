@@ -326,13 +326,13 @@ header #darkmodeContainer {
   justify-content: end;
 }
 #secondRow a:nth-of-type(1) article {
-  background-image: url(src/IMG_0624.JPG);
+  background-image: url(img/IMG_0624.JPG);
 }
 #secondRow a:nth-of-type(2) article {
-  background-image: url(src/200213_Yannic_N_19.JPG);
+  background-image: url(img/200213_Yannic_N_19.JPG);
 }
 #secondRow a:nth-of-type(3) article {
-  background-image: url(src/kelly-sikkema-IkHwu5xLXxs-unsplash.jpg);
+  background-image: url(img/kelly-sikkema-IkHwu5xLXxs-unsplash.jpg);
 }
 #secondRow a h3 {
   margin: 0;
@@ -347,6 +347,7 @@ header #darkmodeContainer {
 
 footer {
   margin-top: 50px;
+  margin-bottom: 80px;
 }
 footer section div {
   display: flex;

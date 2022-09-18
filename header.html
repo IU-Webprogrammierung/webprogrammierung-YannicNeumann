@@ -66,5 +66,18 @@ if(bodyElement.classList.contains('dark-mode')) {
   } else if(prefersDarkScheme.matches || !bodyElement.classList.contains('light-mode') || !bodyElement.classList.contains('dark-mode')) {
     switchElement.checked = true
   }
+
+
+
+  document.querySelector('#languageContainer').addEventListener('click', function(){
+    let url = window.location.href
+    let pathName = window.location.pathname
+    console.log(pathName)
+    if(pathName == '/') {
+      window.location = 'en/index.html'
+    } else {
+      window.location = 'en' + pathName 
+    }
+  })
 </script>
 

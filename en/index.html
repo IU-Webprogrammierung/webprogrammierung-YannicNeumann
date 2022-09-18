@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yannic Neumann</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script> 
+      $(function(){
+          $("#headerDiv").load("header.html");
+          $("#footerDiv").load("footer.html");
+      });  
+  </script>
+  </head>
+  <body class="">
+    <header id="headerDiv"></header>
+
+    <h1><span class="fontWeightLight">Hello, I'm</span> <br>Yannic Neumann</h1>
+
+    <h2 class="formattingH2">Ventures</h2>
+
+    <section id="mainRow" class="flexThreeCol">
+
+      <article>
+        <div>
+        <img src="/img/stock-ux.jpg" width="400" height="600" alt="Header Bild UX">
+        <h3>Independant UX Designer</h3>
+      </div>
+        <a href="https://www.yannic-neumann.de" class="btnPrimary">Learn more</a>
+      </article>
+
+      <article>
+        <div>
+        <img src="/img/stock-sos.jpg" alt="Header Bild Self-Ordering System">
+        <h3>Founder of Selfgast SOS</h3>
+      </div>
+        <a href="https://selfgast.webflow.io" class="btnPrimary">Visit Selfgast.com</a>
+      </article>
+
+      <article>
+        <div>
+        <img src="/img/stock-type.jpg" alt="Header Bild Type Design">
+        <h3>Type Design</h3>
+      </div>
+        <a href="type-design.html" class="btnPrimary">Learn more</a>
+      </article>
+    
+    </section>
+
+    <section id="secondRow" class="gridAutofit">
+      <a href="weitere-unternehmungen.html">
+        <article class="backgroundImages">
+          <h3>Other ventures</h3>
+        </article>
+      </a>
+
+      <a href="about-me.html">
+        <article class="backgroundImages">
+          <h3>About me</h3>
+        </article>
+      </a>
+
+      <a href="portfolio.html">
+        <article class="backgroundImages">
+          <h3>Portfolio</h3>
+        </article>
+      </a>
+
+      <article id="justText">
+        <h3 class="formattingH3">Skills & degrees</h3>
+        <ul>
+          <li>Usability Testing</li>
+          <li>User Research</li>
+          <li>Basic Front-End</li>
+          <li>GSAP</li>
+          <li>UI Design</li>
+          <li>Type Design</li>
+        </ul>
+      </article>
+
+    </section>
+
+
+    <footer id="footerDiv"></footer>
+  </body>
+</html>
